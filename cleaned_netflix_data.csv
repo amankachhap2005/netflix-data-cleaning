@@ -1,1 +1,38 @@
 
+import pandas as pd
+
+# Sample Netflix dataset
+data = {
+    'show_id': ['s1', 's2', 's3'],
+    'type': ['Movie', 'TV Show', 'Movie'],
+    'title': ['Inception', 'Dark', 'The Irishman'],
+    'director': ['Christopher Nolan', None, 'Martin Scorsese'],
+    'cast': ['Leonardo DiCaprio, Joseph Gordon-Levitt', None, 'Robert De Niro, Al Pacino'],
+    'country': ['United States', None, 'United States'],
+    'date_added': ['September 1, 2020', 'December 1, 2017', None],
+    'release_year': [2010, 2017, 2019],
+    'rating': ['PG-13', 'TV-MA', 'R'],
+    'duration': ['148 min', '3 Seasons', '209 min'],
+    'listed_in': ['Action & Adventure', 'International TV Shows', 'Dramas'],
+    'description': [
+        'A thief who steals corporate secrets through dream-sharing.',
+        'A family saga with a supernatural twist.',
+        'A mob hitman recalls his past.'
+    ]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Data Cleaning Steps
+df = df.drop_duplicates()
+df['director'] = df['director'].fillna("Unknown")
+df['cast'] = df['cast'].fillna("Not Available")
+df['country'] = df['country'].fillna("Unknown")
+df['date_added'] = pd.to_datetime(df['date_added'], errors='coerce')
+df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
+df['release_year'] = df['release_year'].astype(int)
+
+# Save cleaned dataset
+df.to_csv("cleaned_netflix_data.csv", index=False)
+print("File saved as cleaned_netflix_data.csv")
