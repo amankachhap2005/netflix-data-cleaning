@@ -40,4 +40,33 @@ The goal of this project is to clean and preprocess the Netflix Movies and TV Sh
 ## 📬 Contact
 
 For any questions or suggestions, feel free to reach out.
+---
+
+## Task 2: Data Visualization and Storytelling
+
+### 🎯 Objective
+To visualize and analyze Superstore sales data using Google Looker Studio and uncover trends across time, segments, and locations.
+
+### 📊 Tools Used
+- Google Looker Studio
+- Cleaned Superstore Dataset
+
+### 📈 Charts Created
+- Bar Chart: Sales by Category
+- Pie Chart: Profit by Segment
+- Line Chart: Sales over Time
+- Geo Map: Sales by State
+- Table: Discount vs Quantity
+
+### 📁 Files
+- `Task_2_Visualization_Report.pdf`
+- `superstore_clean.csv`
+
+### 💡 Key Insights
+- Corporate and Consumer segments dominate revenue
+- California and New York are high-performing states
+- Discounts don’t always boost quantity sold
+
+---
+
 
